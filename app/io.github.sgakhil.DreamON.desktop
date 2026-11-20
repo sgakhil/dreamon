@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=DreamON
+Comment=Sittings, pages read, and days without distraction
+Exec=@EXEC@
+Icon=io.github.sgakhil.DreamON
+Terminal=false
+Type=Application
+Categories=Utility;Education;
+Keywords=focus;reading;writing;zotero;
+StartupNotify=true

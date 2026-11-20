@@ -1,0 +1,9 @@
+{
+  "uuid": "dreamon@sgakhil.github.io",
+  "name": "DreamON",
+  "description": "A quiet room for deep work. Choose a practice (reading, writing, reviewing) and a length; for that sitting only its apps stay on screen, the overview rests, and browser tabs that wander from your document are gently covered.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.dreamon",
+  "url": "https://github.com/sgakhil/dreamon",
+  "version": 4
+}

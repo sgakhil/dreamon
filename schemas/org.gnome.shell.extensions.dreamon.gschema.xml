@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.dreamon" path="/org/gnome/shell/extensions/dreamon/">
+
+    <!-- Preferences -->
+    <key name="exit-mode" type="s">
+      <default>'sentence'</default>
+      <summary>How a session can be stopped early: sentence, wait or none</summary>
+    </key>
+    <key name="exit-sentence" type="s">
+      <default>'I choose to set down my {task} before the bell.'</default>
+      <summary>Sentence to type to stop early ({task} becomes the mode name)</summary>
+    </key>
+    <key name="exit-wait-seconds" type="i">
+      <range min="5" max="600"/>
+      <default>60</default>
+      <summary>Seconds to wait before stopping early</summary>
+    </key>
+    <key name="durations" type="ai">
+      <default>[25, 45, 60, 90, 120]</default>
+      <summary>Session lengths offered in the menu, in minutes</summary>
+    </key>
+    <key name="modes" type="s">
+      <default>'[{"name":"Reading","apps":["zotero","obsidian"],"browser":"","titleMustContain":""},{"name":"Writing","apps":["zotero","firefox"],"browser":"firefox","titleMustContain":"Google Docs"},{"name":"Reviewing","apps":["zotero","firefox"],"browser":"firefox","titleMustContain":"Google Docs"}]'</default>
+      <summary>Modes as JSON: name, allowed apps, browser to watch, required tab title</summary>
+    </key>
+    <key name="always-allowed" type="as">
+      <default>['xdg-desktop-portal']</default>
+      <summary>Apps allowed in every mode (file pickers and similar)</summary>
+    </key>
+    <key name="panel-display" type="s">
+      <default>'minutes'</default>
+      <summary>What the top bar shows during a sitting: icon, minutes or full</summary>
+    </key>
+    <key name="mute-notifications" type="b">
+      <default>true</default>
+      <summary>Hide notification banners during a session</summary>
+    </key>
+    <key name="tab-bar-height" type="i">
+      <range min="0" max="300"/>
+      <default>90</default>
+      <summary>Height in pixels left uncovered at the top of a browser window, so its tabs stay clickable</summary>
+    </key>
+    <key name="track-reading-progress" type="b">
+      <default>true</default>
+      <summary>Report pages read in Zotero (Ethereal Style reading-progress.json) at the end of a session</summary>
+    </key>
+    <key name="reading-progress-path" type="s">
+      <default>''</default>
+      <summary>Path to reading-progress.json (empty means ~/Zotero/reading-progress.json)</summary>
+    </key>
+
+    <key name="blocked-sites" type="as">
+      <default>['YouTube']</default>
+      <summary>Sites (matched in the tab title) covered on a No-site day</summary>
+    </key>
+    <key name="browsers" type="as">
+      <default>['firefox', 'chromium', 'chrome', 'brave', 'epiphany', 'librewolf', 'vivaldi']</default>
+      <summary>Browsers watched on a No-site day</summary>
+    </key>
+    <key name="every-day-site-block" type="b">
+      <default>false</default>
+      <summary>Make every day a No-site day</summary>
+    </key>
+    <key name="site-day" type="s">
+      <default>''</default>
+      <summary>Date (YYYY-MM-DD) declared as a No-site day; it lasts until midnight</summary>
+    </key>
+
+    <!-- Session state: lets a session survive screen lock, logout and reboot -->
+    <key name="active-mode" type="s">
+      <default>''</default>
+      <summary>JSON snapshot of the running session's mode (empty when idle)</summary>
+    </key>
+    <key name="session-start" type="x">
+      <default>0</default>
+      <summary>Unix time the session started</summary>
+    </key>
+    <key name="session-end" type="x">
+      <default>0</default>
+      <summary>Unix time the session ends</summary>
+    </key>
+    <key name="session-exit-mode" type="s">
+      <default>''</default>
+      <summary>Exit mode fixed at the start of the running session</summary>
+    </key>
+    <key name="session-counters" type="s">
+      <default>''</default>
+      <summary>JSON: windows minimized and tabs covered in the running sitting</summary>
+    </key>
+    <key name="muted-banners" type="b">
+      <default>false</default>
+      <summary>Whether this extension turned notification banners off</summary>
+    </key>
+  </schema>
+</schemalist>
